@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    
+    <div id="container">
+        <h1>Chào mừng đến mới Blog website của tôi</h1>
+        <bai_viet
+            v-for="i in cac_bai_viet" :bv="i"
+        ></bai_viet>
+
+        <div id="upload">
+            <h2>Đăng bài mới</h2>
+            <h5>Nhập tiêu đề</h5>
+            <input type="text" v-model="tieude">
+            <br>
+            <h5>Nhập tên tác giả</h5>
+            <input type="text" v-model="tacgia">
+            <br>
+            <h5>Nhập ngày đăng</h5>
+            <input type="date" v-model="ngay">
+            <br>
+            <h5>Nhập nội dung</h5>
+            <input type="text" v-model="noidung">
+            <br>
+            <button v-on:click="dang_bai_moi">Đăng bài</button>
+        </div>
+    </div>
+    <script src="./main.js"></script>
 </body>
 </html>
